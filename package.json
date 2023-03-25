@@ -1,0 +1,10 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "./host"
+  ],
+  "devDependencies": {
+    "lerna": "^6.6.1"
+  }
+}
