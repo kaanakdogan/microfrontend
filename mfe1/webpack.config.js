@@ -30,17 +30,17 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'host',
-      remotes: {
-        'mfe1': 'mfe1@http://localhost:3001/remoteEntry.js',
-        'mfe2': 'mfe1@http://localhost:3002/remoteEntry.js',
-      },
+      name: 'mfe1',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './App': './src/App.js'
+      }
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
   ],
   devServer: {
-    port: 3000
+    port: 3001
   }
 }

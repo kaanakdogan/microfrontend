@@ -2,7 +2,9 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "./host"
+    "./host",
+    "./mfe1",
+    "./mfe2"
   ],
   "devDependencies": {
     "lerna": "^6.6.1"
