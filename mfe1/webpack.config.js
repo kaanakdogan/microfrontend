@@ -5,7 +5,7 @@ const deps = require('./package.json').dependencies;
 
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
+  mode: 'production',
   resolve: {
     extensions: ['.jsx', '.js', '.json', '.css', '.scss', '.jpg', 'jpeg', 'png'],
   },

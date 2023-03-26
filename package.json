@@ -6,6 +6,10 @@
     "./mfe1",
     "./mfe2"
   ],
+  "scripts": {
+    "start": "npx lerna run start",
+    "start:dev": "npx lerna run start:dev"
+  },
   "devDependencies": {
     "lerna": "^6.6.1"
   }
