@@ -2,7 +2,8 @@ const { ModuleFederationPlugin } = require('webpack').container;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const deps = require('./package.json').dependencies;
-
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './src/index.js',
@@ -31,18 +32,20 @@ module.exports = {
     ],
   },
   plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerPort: 8893,
+      analyzerMode: 'disabled' // default 'server'
+    }),
     new ModuleFederationPlugin({
-      name: 'mfe2',
+      name: 'component_app',
       filename: 'remoteEntry.js',
       exposes: {
-        './App': './src/App.js'
-      },
-      remotes: {
-        'component-app': 'component_app@http://localhost:3003/remoteEntry.js',
+        './Button': './src/components/Button.js'
       },
       shared: {
         react: {
           singleton: true,
+          requiredVersion: deps['react']
         },
         'react-dom': {
           singleton: true,
@@ -55,6 +58,6 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: 3002
+    port: 3003
   }
 }

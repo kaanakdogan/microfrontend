@@ -4,7 +4,8 @@
   "workspaces": [
     "./host",
     "./mfe1",
-    "./mfe2"
+    "./mfe2",
+    "./component-app"
   ],
   "scripts": {
     "start": "npx lerna run start",
