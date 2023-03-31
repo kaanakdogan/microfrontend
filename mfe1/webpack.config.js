@@ -2,6 +2,8 @@ const { ModuleFederationPlugin } = require('webpack').container;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const deps = require('./package.json').dependencies;
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './src/index.js',
@@ -30,6 +32,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerPort: 3011,
+    }),
     new ModuleFederationPlugin({
       name: 'mfe1',
       filename: 'remoteEntry.js',
@@ -48,7 +53,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-    }),
+    })
   ],
   devServer: {
     port: 3001

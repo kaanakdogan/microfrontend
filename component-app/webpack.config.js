@@ -33,8 +33,7 @@ module.exports = {
   },
   plugins: [
     new BundleAnalyzerPlugin({
-      analyzerPort: 8893,
-      analyzerMode: 'disabled' // default 'server'
+      analyzerPort: 3013,
     }),
     new ModuleFederationPlugin({
       name: 'component_app',
@@ -55,7 +54,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-    }),
+    })
   ],
   devServer: {
     port: 3003
