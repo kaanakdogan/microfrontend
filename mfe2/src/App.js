@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from 'component-app/Button'
 
 export default function App() {
-  return <Button variant="outlined" >MFE Button</Button>
+  const [message, setMessage] = useState("MFE 2 Text")
+  return (
+    <div>
+      <Button variant="outlined" onClick={() => {
+        setMessage("MFE 2 Button Clicked")
+      }}>
+        {message}
+      </Button>
+    </div>
+  )
 }

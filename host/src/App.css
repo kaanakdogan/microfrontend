@@ -1,0 +1,15 @@
+.host-container {
+  margin: 30px;
+  padding: 10px;
+  border: 4px dashed cyan;
+  text-align: center;
+}
+
+.mfe-container {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border: 4px dashed red;
+  height: 100px;
+  width: 30vw;
+}
